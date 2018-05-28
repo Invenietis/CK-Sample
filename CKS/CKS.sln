@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CKS.Data", "CKS.Data\CKS.Da
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{4DB2E0F1-0250-4F7F-A63C-9EF76FB49FD5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CKS.Data.Tests", "CKS.Data.Tests\CKS.Data.Tests.csproj", "{0181189C-0A13-4441-AB1B-EE7EBDF1432F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CKS.Data.Tests", "Tests\CKS.Data.Tests\CKS.Data.Tests.csproj", "{0181189C-0A13-4441-AB1B-EE7EBDF1432F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
