@@ -12,6 +12,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{4DB2E0F1-0250-4F7F-A63C-9EF76FB49FD5}"
+	ProjectSection(SolutionItems) = preProject
+		Tests\TestHelper.config = Tests\TestHelper.config
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CKS.Data", "CKS.Data\CKS.Data.csproj", "{F256A30D-DA1E-4B82-92B3-37E179239028}"
 EndProject
