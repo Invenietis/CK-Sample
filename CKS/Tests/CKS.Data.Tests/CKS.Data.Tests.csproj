@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net461</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CK.DB.Actor" Version="1.0.0" />
+    <PackageReference Include="CK.DB.Tests.NUnit" Version="6.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NUnit.Runners.Net4" Version="2.6.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\CKS.Data\CKS.Data.csproj" />
+  </ItemGroup>
+
+</Project>
