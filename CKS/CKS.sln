@@ -10,13 +10,16 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		Nuget.config = Nuget.config
 		Common\Shared.props = Common\Shared.props
 	EndProjectSection
+EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{4DB2E0F1-0250-4F7F-A63C-9EF76FB49FD5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CKS.Data", "CKS.Data\CKS.Data.csproj", "{F256A30D-DA1E-4B82-92B3-37E179239028}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CKS.Data", "CKS.Data\CKS.Data.csproj", "{F256A30D-DA1E-4B82-92B3-37E179239028}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CKS.Data.Tests", "Tests\CKS.Data.Tests\CKS.Data.Tests.csproj", "{0181189C-0A13-4441-AB1B-EE7EBDF1432F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CKS.Data.NetCore.Tests", "Tests\CKS.Data.NetCore.Tests\CKS.Data.NetCore.Tests.csproj", "{E5BFEBB1-FEDA-4CFB-9575-1FF0E7155C7C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CKS.Data.NetCore.Tests", "Tests\CKS.Data.NetCore.Tests\CKS.Data.NetCore.Tests.csproj", "{E5BFEBB1-FEDA-4CFB-9575-1FF0E7155C7C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApp", "WebApp\WebApp.csproj", "{583B568A-3995-4BCC-B67E-7A6655544E16}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -36,6 +39,10 @@ Global
 		{E5BFEBB1-FEDA-4CFB-9575-1FF0E7155C7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E5BFEBB1-FEDA-4CFB-9575-1FF0E7155C7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E5BFEBB1-FEDA-4CFB-9575-1FF0E7155C7C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{583B568A-3995-4BCC-B67E-7A6655544E16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{583B568A-3995-4BCC-B67E-7A6655544E16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{583B568A-3995-4BCC-B67E-7A6655544E16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{583B568A-3995-4BCC-B67E-7A6655544E16}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
