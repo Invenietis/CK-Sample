@@ -3,15 +3,20 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2018
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{33856F15-803C-4B10-A779-983692D070BB}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{340F9235-B68E-47DE-B9A6-8FB9A02280FC}"
 	ProjectSection(SolutionItems) = preProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CKS.Data", "CKS.Data\CKS.Data.csproj", "{F256A30D-DA1E-4B82-92B3-37E179239028}"
-EndProject
 		.editorconfig = .editorconfig
 		..\.gitignore = ..\.gitignore
 		Nuget.config = Nuget.config
 		Common\Shared.props = Common\Shared.props
 	EndProjectSection
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{4DB2E0F1-0250-4F7F-A63C-9EF76FB49FD5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CKS.Data", "CKS.Data\CKS.Data.csproj", "{F256A30D-DA1E-4B82-92B3-37E179239028}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CKS.Data.Tests", "Tests\CKS.Data.Tests\CKS.Data.Tests.csproj", "{0181189C-0A13-4441-AB1B-EE7EBDF1432F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CKS.Data.NetCore.Tests", "Tests\CKS.Data.NetCore.Tests\CKS.Data.NetCore.Tests.csproj", "{E5BFEBB1-FEDA-4CFB-9575-1FF0E7155C7C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,9 +28,21 @@ Global
 		{F256A30D-DA1E-4B82-92B3-37E179239028}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F256A30D-DA1E-4B82-92B3-37E179239028}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F256A30D-DA1E-4B82-92B3-37E179239028}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0181189C-0A13-4441-AB1B-EE7EBDF1432F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0181189C-0A13-4441-AB1B-EE7EBDF1432F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0181189C-0A13-4441-AB1B-EE7EBDF1432F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0181189C-0A13-4441-AB1B-EE7EBDF1432F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5BFEBB1-FEDA-4CFB-9575-1FF0E7155C7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5BFEBB1-FEDA-4CFB-9575-1FF0E7155C7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5BFEBB1-FEDA-4CFB-9575-1FF0E7155C7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5BFEBB1-FEDA-4CFB-9575-1FF0E7155C7C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0181189C-0A13-4441-AB1B-EE7EBDF1432F} = {4DB2E0F1-0250-4F7F-A63C-9EF76FB49FD5}
+		{E5BFEBB1-FEDA-4CFB-9575-1FF0E7155C7C} = {4DB2E0F1-0250-4F7F-A63C-9EF76FB49FD5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4CC54ADD-F9AC-42DC-BAD9-33BAAA3B94D3}
