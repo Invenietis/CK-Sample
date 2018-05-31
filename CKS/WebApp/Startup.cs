@@ -14,8 +14,6 @@ namespace WebApp
     {
         readonly IConfiguration _configuration;
         readonly IHostingEnvironment _env;
-        const string _connectionString =
-            "Server=.;Database=CKTEST_CKS_Data;Trusted_Connection=True;";
 
         public Startup( IConfiguration configuration, IHostingEnvironment env )
         {
@@ -33,7 +31,7 @@ namespace WebApp
                      options.SlidingExpirationTime = TimeSpan.FromHours( 1 );
                  } );
 
-            if (_env.IsDevelopment())
+            if( _env.IsDevelopment() )
             {
                 string dllPath = _configuration["StObjMap:Path"];
                 if( dllPath != null )
@@ -43,7 +41,7 @@ namespace WebApp
                     File.Copy( dllPath, Path.Combine( AppContext.BaseDirectory, "CK.StObj.AutoAssembly.dll" ), overwrite: true );
                 }
             }
-            services.AddDefaultStObjMap( "CK.StObj.AutoAssembly", _connectionString );
+            services.AddDefaultStObjMap( "CK.StObj.AutoAssembly" );
 
             services.AddSingleton<IAuthenticationTypeSystem, StdAuthenticationTypeSystem>();
             services.AddSingleton<IWebFrontAuthLoginService, SqlWebFrontAuthLoginService>();
