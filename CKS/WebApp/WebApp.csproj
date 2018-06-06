@@ -6,16 +6,13 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="CK.AspNet.Auth" Version="1.1.0-rc" />
-        <PackageReference Include="CK.DB.AspNet.Auth" Version="1.1.0-rc" />
-        <PackageReference Include="Microsoft.AspNetCore.Hosting" Version="2.0.3" />
+        <PackageReference Include="CK.AspNet.Auth" Version="1.1.1-C0049-develop" />
+        <PackageReference Include="CK.DB.AspNet.Auth" Version="1.1.1-C0049-develop" />
         <PackageReference Include="Microsoft.AspNetCore.Server.Kestrel" Version="2.0.3" />
         <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="2.0.2" />
         <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="2.0.2" />
-        <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="2.0.2" />
-        <PackageReference Include="Microsoft.AspNetCore.Authentication" Version="2.0.4" />
         <PackageReference Include="Microsoft.AspNetCore.Authentication.Cookies" Version="2.0.4" />
-        <PackageReference Include="CK.AspNet" Version="2.0.0" />
+        <PackageReference Include="CK.AspNet" Version="2.0.1-C0036-develop" />
     </ItemGroup>
 
     <ItemGroup>
