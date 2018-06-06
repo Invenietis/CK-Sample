@@ -11,8 +11,13 @@ namespace CKS.Data
     Versions( "1.0.0" )]
     public abstract class Package : SqlPackage
     {
-        void StobjConstruct()
+        void StobjConstruct(
+            CK.DB.Actor.ActorEMail.Package actorEmailPckg,
+            CK.DB.User.UserPassword.Package userPswdPckg,
+            CK.DB.User.UserGithub.Package userGithubPckg
+            )
         {
+
         }
     }
 }
