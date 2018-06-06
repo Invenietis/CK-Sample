@@ -1,17 +1,17 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <Import Project="..\Common\Shared.props" />
 
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;net461</TargetFrameworks>
-    <CopyLocalLockFileAssemblies>True</CopyLocalLockFileAssemblies>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="CK.DB.Auth" Version="1.0.1-C0028-develop" />
-    <PackageReference Include="CK.DB.User.UserGithub" Version="0.1.1-C0029-develop" />
-    <PackageReference Include="CK.DB.User.UserPassword" Version="1.0.1-C0028-develop" />
-    <PackageReference Include="CK.DB.Actor.ActorEmail" Version="1.0.1-C0028-develop" />
+    <PackageReference Include="CK.DB.Auth" Version="1.0.1-C0030-develop" />
+    <PackageReference Include="CK.DB.User.UserPassword" Version="1.0.1-C0030-develop" />
+    <PackageReference Include="CK.DB.Actor.ActorEmail" Version="1.0.1-C0030-develop" />
+    <PackageReference Include="CK.DB.User.UserGithub" Version="0.1.1-C0031-develop" />
   </ItemGroup>
 
 </Project>

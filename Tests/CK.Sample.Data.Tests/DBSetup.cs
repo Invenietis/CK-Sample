@@ -1,4 +1,5 @@
 using NUnit.Framework;
+using static CK.Testing.DBSetupTestHelper;
 
 namespace CK.Sample.Data.Tests
 {

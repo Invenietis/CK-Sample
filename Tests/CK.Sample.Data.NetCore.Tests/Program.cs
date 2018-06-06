@@ -1,5 +1,6 @@
 using System;
 using System.Reflection;
+using CK.Monitoring;
 using NUnit.Common;
 using NUnitLite;
 
