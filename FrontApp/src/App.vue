@@ -29,7 +29,7 @@
       Welcome to your application, <span class="bold">{{ authInfo.user.name }}</span> ! <br />
       You've signed in with <span class="bold">{{ authInfo.user.schemes[0].name }}</span>.
     </div>
-
+    
   </div>
 </template>
 
@@ -71,10 +71,15 @@
       },
 
       basicLogin(username, password) {
-        if (!(username || password) || !(username) || !(password))
-          return this.errorMsg = 'Issue when attempting to login.';
+        this.errorMsg = null;
 
-        ApplicationAuthService.instance.basicLogin(username, password);
+        if (!(username || password) || !(username) || !(password))
+          return this.errorMsg = 'Username and/or password is/are missing.';
+
+        ApplicationAuthService.instance.basicLogin(username, password).then(_ => {
+          if (this.authInfo.level === 0)
+            return this.errorMsg = 'Username and/or password is/are wrong.'
+        });
       },
 
       remoteLogin() {
