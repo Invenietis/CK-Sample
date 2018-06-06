@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net461</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CK.DB.Actor" Version="1.0.1-C0028-develop" />
+    <PackageReference Include="CK.DB.Tests.NUnit" Version="6.0.1-C0036-develop" />
+    <PackageReference Include="CK.DB.User.UserGithub.Tests" Version="0.1.1-C0029-develop" />
+    <PackageReference Include="CK.DB.User.UserPassword.Tests" Version="1.0.1-C0028-develop" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NUnit.Runners.Net4" Version="2.6.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\CK.Sample.Data\CK.Sample.Data.csproj" />
+  </ItemGroup>
+
+</Project>
