@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <Import Project="..\..\Common\Shared.props" />
 
@@ -17,6 +17,7 @@
     <PackageReference Include="NUnit" Version="3.10.1" />
     <PackageReference Include="NUnitLite" Version="3.10.1" />
     <PackageReference Include="CK.DB.Tests.NUnit" Version="6.0.1-C0036-develop" />
+    <PackageReference Include="CK.DB.User.UserGithub.Tests" Version="0.1.1-C0029-develop" />
     <PackageReference Include="CK.DB.User.UserPassword.Tests" Version="1.0.1-C0028-develop" />
   </ItemGroup>
 

@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net461</TargetFramework>
@@ -7,6 +7,7 @@
   <ItemGroup>
     <PackageReference Include="CK.DB.Actor" Version="1.0.1-C0028-develop" />
     <PackageReference Include="CK.DB.Tests.NUnit" Version="6.0.1-C0036-develop" />
+    <PackageReference Include="CK.DB.User.UserGithub.Tests" Version="0.1.1-C0029-develop" />
     <PackageReference Include="CK.DB.User.UserPassword.Tests" Version="1.0.1-C0028-develop" />
   </ItemGroup>
 
