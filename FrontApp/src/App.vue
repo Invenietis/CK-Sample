@@ -18,11 +18,17 @@
       class="sign-in-button">
         <span class="bold">Sign in</span>
       </button>
+
+      <button 
+      @click="newBasicLogin()" 
+      class="sign-in-button">
+        <span>Popup</span>
+      </button>
       <br /><br />
+
       <span class="mention-text">
         You can <a href="#" @click="remoteLogin()">use GitHub</a> to sign in.
       </span>
-
     </div>
 
     <div v-else>
@@ -68,6 +74,10 @@
         if (this.authInfo) {
           return (this.authInfo.level >= 2) ? true : false;
         } return false;
+      },
+
+      newBasicLogin() {
+        ApplicationAuthService.instance.startPopupBasicLogin();
       },
 
       basicLogin(username, password) {
