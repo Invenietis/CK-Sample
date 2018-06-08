@@ -8,10 +8,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="CK.DB.Auth" Version="1.0.1-C0030-develop" />
-    <PackageReference Include="CK.DB.User.UserPassword" Version="1.0.1-C0030-develop" />
-    <PackageReference Include="CK.DB.Actor.ActorEmail" Version="1.0.1-C0030-develop" />
-    <PackageReference Include="CK.DB.User.UserGithub" Version="0.1.1-C0031-develop" />
+    <PackageReference Include="CK.DB.Auth" Version="1.0.1-C0037-develop" />
+    <PackageReference Include="CK.DB.User.UserPassword" Version="1.0.1-C0037-develop" />
+    <PackageReference Include="CK.DB.Actor.ActorEmail" Version="1.0.1-C0037-develop" />
+    <PackageReference Include="CK.DB.User.UserGithub" Version="0.1.1-C0038-develop" />
   </ItemGroup>
 
 </Project>

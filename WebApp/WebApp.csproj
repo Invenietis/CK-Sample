@@ -7,9 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="CK.AspNet" Version="2.0.1-C0038-develop" />
-    <PackageReference Include="CK.AspNet.Auth" Version="1.1.1-C0051-develop" />
-    <PackageReference Include="CK.DB.AspNet.Auth" Version="1.1.1-C0051-develop" />
+    <PackageReference Include="CK.AspNet" Version="2.0.1-C0046-develop" />
+    <PackageReference Include="CK.AspNet.Auth" Version="1.1.1-C0058-develop" />
+    <PackageReference Include="CK.DB.AspNet.Auth" Version="1.1.1-C0058-develop" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.OAuth" Version="2.1.0" />
     <PackageReference Include="Microsoft.AspNetCore.Cors" Version="2.1.0" />
     <PackageReference Include="Microsoft.AspNetCore.Server.Kestrel" Version="2.1.0" />

@@ -13,9 +13,9 @@
     <ProjectReference Include="..\..\CK.Sample.Data\CK.Sample.Data.csproj" />
     <PackageReference Include="NUnit" Version="3.10.1" />
     <PackageReference Include="NUnitLite" Version="3.10.1" />
-    <PackageReference Include="CK.DB.Tests.NUnit" Version="6.0.1-C0040-develop" />
-    <PackageReference Include="CK.DB.User.UserGithub.Tests" Version="0.1.1-C0031-develop" />
-    <PackageReference Include="CK.DB.User.UserPassword.Tests" Version="1.0.1-C0030-develop" />
+    <PackageReference Include="CK.DB.Tests.NUnit" Version="6.0.1-C0048-develop" />
+    <PackageReference Include="CK.DB.User.UserGithub.Tests" Version="0.1.1-C0038-develop" />
+    <PackageReference Include="CK.DB.User.UserPassword.Tests" Version="1.0.1-C0037-develop" />
   </ItemGroup>
 
   <ItemGroup>
