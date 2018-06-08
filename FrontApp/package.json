@@ -10,7 +10,7 @@
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
   },
   "dependencies": {
-    "@signature/webfrontauth": "^0.8.4",
+    "@signature/webfrontauth": "^0.9.0",
     "axios": "^0.18.0",
     "html-webpack-plugin": "^3.2.0",
     "vue": "^2.5.11"
