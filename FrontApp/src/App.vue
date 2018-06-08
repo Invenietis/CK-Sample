@@ -3,26 +3,10 @@
 
     <h1>CK-Sample</h1>
     <div v-if="!isAuthenticated()" id="content">
-
-      <div v-if="errorMsg" class="error">
-        <span class="bold">Error:</span> {{ errorMsg }}
-      </div>
-
-      <input type="text" name="username" v-model="username" placeholder="username" /> 
-      <br /><br />
-      <input type="password" name="password" v-model="password" placeholder="password" />
-      <br /><br />
-
       <button 
-      @click="basicLogin(username, password)" 
+      @click="basicLogin()" 
       class="sign-in-button">
-        <span class="bold">Sign in</span>
-      </button>
-
-      <button 
-      @click="newBasicLogin()" 
-      class="sign-in-button">
-        <span>Popup</span>
+        <span>Sign in basicly</span>
       </button>
       <br /><br />
 
@@ -76,20 +60,8 @@
         } return false;
       },
 
-      newBasicLogin() {
+      basicLogin() {
         ApplicationAuthService.instance.startPopupBasicLogin();
-      },
-
-      basicLogin(username, password) {
-        this.errorMsg = null;
-
-        if (!(username || password) || !(username) || !(password))
-          return this.errorMsg = 'Username and/or password is/are missing.';
-
-        ApplicationAuthService.instance.basicLogin(username, password).then(_ => {
-          if (this.authInfo.level === 0)
-            return this.errorMsg = 'Username and/or password is/are wrong.'
-        });
       },
 
       remoteLogin() {
