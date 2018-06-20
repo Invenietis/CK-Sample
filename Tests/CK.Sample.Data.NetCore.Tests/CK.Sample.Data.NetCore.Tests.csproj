@@ -6,6 +6,7 @@
     <TargetFramework>netcoreapp2.1</TargetFramework>
     <OutputType>Exe</OutputType>
     <OriginProjectName>CK.Sample.Data.Tests</OriginProjectName>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
   </PropertyGroup>
 
 
@@ -13,13 +14,13 @@
     <ProjectReference Include="..\..\CK.Sample.Data\CK.Sample.Data.csproj" />
     <PackageReference Include="NUnit" Version="3.10.1" />
     <PackageReference Include="NUnitLite" Version="3.10.1" />
-    <PackageReference Include="CK.DB.Tests.NUnit" Version="6.0.1-C0048-develop" />
-    <PackageReference Include="CK.DB.User.UserGithub.Tests" Version="0.1.1-C0038-develop" />
-    <PackageReference Include="CK.DB.User.UserPassword.Tests" Version="1.0.1-C0037-develop" />
+    <PackageReference Include="CK.DB.Tests.NUnit" Version="7.0.1" />
+    <PackageReference Include="CK.DB.User.UserGithub.Tests" Version="0.2.0" />
+    <PackageReference Include="CK.DB.User.UserPassword.Tests" Version="2.0.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Include="..\$(OriginProjectName)\**\*.cs" Exclude="..\$(OriginProjectName)\obj\**">
+    <Compile Include="..\$(OriginProjectName)\**\*.cs" Exclude="..\$(OriginProjectName)\obj\**;..\$(OriginProjectName)\bin\**">
       <Link>Include\%(RecursiveDir)%(Filename)%(Extension)</Link>
       <Visible>true</Visible>
     </Compile>
@@ -27,6 +28,10 @@
 
   <ItemGroup>
     <Service Include="{82a7f48d-3b50-4b1e-b82e-3ada8210c358}" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Logs\" />
   </ItemGroup>
 
 </Project>
