@@ -1,0 +1,5 @@
+create transformer on CK.sUserDestroy
+as
+begin
+  inject "delete from SMPL.tStudentUser where UserId = @UserId;" into "PreDestroy";
+end

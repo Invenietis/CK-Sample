@@ -3,11 +3,7 @@ using CK.SqlServer.Setup;
 
 namespace CKS.Data
 {
-    [SqlPackage(
-    ResourcePath = "Res",
-    Schema = "CK",
-    Database = typeof( SqlDefaultDatabase ),
-    ResourceType = typeof( Package ) ),
+    [SqlPackage( ResourcePath = "Res", Schema = "SMPL"),
     Versions( "1.0.0" )]
     public abstract class Package : SqlPackage
     {

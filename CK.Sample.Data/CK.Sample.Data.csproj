@@ -1,9 +1,10 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <Import Project="..\Common\Shared.props" />
 
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;net461</TargetFrameworks>
+    <RootNamespace>CKS.Data</RootNamespace>
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
   </PropertyGroup>
 
@@ -14,4 +15,16 @@
     <PackageReference Include="CK.DB.User.UserGithub" Version="0.2.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <EmbeddedResource Include="**/*.sql;**/*.tql;**/*.y4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Res\Model\SMPL.PowerUserTable.Install.1.0.0.sql" />
+    <None Remove="Res\PowerUserTable(CK.sUserDestroy).tql" />
+    <None Remove="Res\sPowerUserPlug.sql" />
+    <None Remove="Res\sPowerUserUnplug.sql" />
+    <None Remove="Res\StudentUserTable(CK.sUserDestroy).tql" />
+  </ItemGroup>
+  
 </Project>
