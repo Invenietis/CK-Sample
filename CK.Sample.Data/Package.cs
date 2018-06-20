@@ -3,8 +3,8 @@ using CK.SqlServer.Setup;
 
 namespace CKS.Data
 {
-    [SqlPackage( ResourcePath = "Res", Schema = "SMPL"),
-    Versions( "1.0.0" )]
+    [SqlPackage( ResourcePath = "Res", Schema = "SMPL")]
+    [Versions( "1.0.0" )]
     public abstract class Package : SqlPackage
     {
         void StobjConstruct(
@@ -13,7 +13,12 @@ namespace CKS.Data
             CK.DB.User.UserGithub.Package userGithubPckg
             )
         {
-
         }
+
+        [InjectContract]
+        public StudentUserTable StudentUserTable { get; private set; }
+
+        [InjectContract]
+        public PowerUserTable PowerUserTable { get; private set; }
     }
 }

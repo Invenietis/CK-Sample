@@ -9,6 +9,11 @@ using System.Threading.Tasks;
 
 namespace CKS.Data
 {
+    /// <summary>
+    /// A power user is a typically example of a "Facet".
+    /// Any User can become a Power user or be no more a PowerUser at any time.
+    /// One of the verb that describe this can be Plug/Unplug.
+    /// </summary>
     [SqlTable( "tPowerUser", Package = typeof( Package ) )]
     [Versions( "1.0.0" )]
     [SqlObjectItem( "transform:CK.sUserDestroy" )]
