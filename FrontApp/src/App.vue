@@ -3,33 +3,23 @@
 
     <h1>CK-Sample</h1>
     <div v-if="!isAuthenticated()" id="content">
-
-      <div v-if="errorMsg" class="error">
-        <span class="bold">Error:</span> {{ errorMsg }}
-      </div>
-
-      <input type="text" name="username" v-model="username" placeholder="username" /> 
-      <br /><br />
-      <input type="password" name="password" v-model="password" placeholder="password" />
-      <br /><br />
-
       <button 
-      @click="basicLogin(username, password)" 
+      @click="basicLogin()" 
       class="sign-in-button">
-        <span class="bold">Sign in</span>
+        <span>Sign in basicly</span>
       </button>
       <br /><br />
+
       <span class="mention-text">
         You can <a href="#" @click="remoteLogin()">use GitHub</a> to sign in.
       </span>
-
     </div>
 
     <div v-else>
       Welcome to your application, <span class="bold">{{ authInfo.user.name }}</span> ! <br />
       You've signed in with <span class="bold">{{ authInfo.user.schemes[0].name }}</span>.
     </div>
-
+    
   </div>
 </template>
 
@@ -70,11 +60,8 @@
         } return false;
       },
 
-      basicLogin(username, password) {
-        if (!(username || password) || !(username) || !(password))
-          return this.errorMsg = 'Issue when attempting to login.';
-
-        ApplicationAuthService.instance.basicLogin(username, password);
+      basicLogin() {
+        ApplicationAuthService.instance.startPopupBasicLogin();
       },
 
       remoteLogin() {
