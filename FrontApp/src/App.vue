@@ -61,7 +61,7 @@
       },
 
       basicLogin() {
-        ApplicationAuthService.instance.startPopupBasicLogin();
+        ApplicationAuthService.instance.startPopupLogin("Basic");
       },
 
       remoteLogin() {

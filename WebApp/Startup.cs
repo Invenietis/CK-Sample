@@ -50,28 +50,34 @@ namespace WebApp
                       options.TokenEndpoint = "https://github.com/login/oauth/access_token";
                       options.UserInformationEndpoint = "https://api.github.com/user";
 
+                      // We are using the standard transformer from the JSON info received
+                      // when calling the UserInformationEndpoint (in OnCreatingTicket below)
+                      // to create the Principal claims.
                       options.ClaimActions.MapJsonKey( ClaimTypes.NameIdentifier, "id" );
-                      options.ClaimActions.MapJsonKey( ClaimTypes.Name, "name" );
-                      options.ClaimActions.MapJsonKey( "urn:github:login", "login" );
-                      options.ClaimActions.MapJsonKey( "urn:github:url", "html_url" );
-                      options.ClaimActions.MapJsonKey( "urn:github:avatar", "avatar_url" );
 
-                      options.Events = new OAuthEventHandler
+                      // This is required for Github: we must call the back channel with the
+                      // AccessToken to retrieve actual user informations.
+                      options.Events.OnCreatingTicket = async context =>
                       {
-                          OnCreatingTicket = async context =>
-                          {
-                              var request = new HttpRequestMessage( HttpMethod.Get, context.Options.UserInformationEndpoint );
-                              request.Headers.Accept.Add( new MediaTypeWithQualityHeaderValue( "application/json" ) );
-                              request.Headers.Authorization = new AuthenticationHeaderValue( "Bearer", context.AccessToken );
-
-                              var response = await context.Backchannel.SendAsync( request, HttpCompletionOption.ResponseHeadersRead, context.HttpContext.RequestAborted );
-                              response.EnsureSuccessStatusCode();
-
-                              var user = JObject.Parse( await response.Content.ReadAsStringAsync() );
-
-                              context.RunClaimActions( user );
-                          }
+                        using( var request = new HttpRequestMessage( HttpMethod.Get, context.Options.UserInformationEndpoint ) )
+                        {
+                            request.Headers.Accept.Add( new MediaTypeWithQualityHeaderValue( "application/json" ) );
+                            request.Headers.Authorization = new AuthenticationHeaderValue( "Bearer", context.AccessToken );
+                            using( var response = await context.Backchannel.SendAsync( request, HttpCompletionOption.ResponseHeadersRead, context.HttpContext.RequestAborted ) )
+                            {
+                                response.EnsureSuccessStatusCode();
+                                string userInfo = await response.Content.ReadAsStringAsync();
+                                context.RunClaimActions( JObject.Parse( userInfo ) );
+                            }
+                        }
                       };
+
+                      // Final transfer to the WebFrontAuthService.
+                      options.Events.OnTicketReceived = c => c.WebFrontAuthRemoteAuthenticateAsync<IUserGithubInfo>( payload =>
+                      {
+                          payload.GithubAccountId = c.Principal.FindFirst( ClaimTypes.NameIdentifier ).Value;
+                      } );
+
                   } );
 
             if( _env.IsDevelopment() )
@@ -84,7 +90,7 @@ namespace WebApp
                     File.Copy( dllPath, Path.Combine( AppContext.BaseDirectory, "CK.StObj.AutoAssembly.dll" ), overwrite: true );
                 }
             }
-            services.AddDefaultStObjMap( "CK.StObj.AutoAssembly" );
+            services.AddStObjMap( "CK.StObj.AutoAssembly" );
             services.AddCors();
             services.AddSingleton<IAuthenticationTypeSystem, StdAuthenticationTypeSystem>();
             services.AddSingleton<IWebFrontAuthLoginService, SqlWebFrontAuthLoginService>();
@@ -95,18 +101,6 @@ namespace WebApp
             app.UseRequestMonitor();
             app.UseCors( c => c.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader().AllowCredentials() );
             app.UseAuthentication();
-        }
-    }
-
-    internal class OAuthEventHandler : OAuthEvents
-    {
-        public override Task TicketReceived( TicketReceivedContext c )
-        {
-            var authService = c.HttpContext.RequestServices.GetRequiredService<WebFrontAuthService>();
-            return authService.HandleRemoteAuthentication<IUserGithubInfo>( c, payload =>
-            {
-                payload.GithubAccountId = c.Principal.FindFirst( ClaimTypes.NameIdentifier ).Value;
-            } );
         }
     }
 }

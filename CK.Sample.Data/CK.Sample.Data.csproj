@@ -9,22 +9,17 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="CK.DB.Auth" Version="2.0.0" />
-    <PackageReference Include="CK.DB.User.UserPassword" Version="2.0.0" />
-    <PackageReference Include="CK.DB.Actor.ActorEmail" Version="2.0.0" />
-    <PackageReference Include="CK.DB.User.UserGithub" Version="0.2.0" />
+    <PackageReference Include="CK.SqlServer.Setup.Model" Version="7.1.1-C0024-develop" />
+    <PackageReference Include="CK.DB.Auth" Version="2.0.2-C0014-develop" />
+    <PackageReference Include="CK.DB.User.UserPassword" Version="2.0.2-a00-00-0009-develop" />
+    <PackageReference Include="CK.DB.Actor.ActorEmail" Version="2.0.2-C0014-develop" />
+    <PackageReference Include="CK.DB.User.UserGithub" Version="0.2.2-C0009-develop" />
+    <PackageReference Include="CK.DB.User.UserGithub.AuthScope" Version="0.2.2-C0009-develop" />
+    <PackageReference Include="CK.DB.User.SimpleInvitation" Version="0.0.0-b01-00-0009-develop" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="**/*.sql;**/*.tql;**/*.y4" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Remove="Res\Model\SMPL.PowerUserTable.Install.1.0.0.sql" />
-    <None Remove="Res\PowerUserTable(CK.sUserDestroy).tql" />
-    <None Remove="Res\sPowerUserPlug.sql" />
-    <None Remove="Res\sPowerUserUnplug.sql" />
-    <None Remove="Res\StudentUserTable(CK.sUserDestroy).tql" />
   </ItemGroup>
   
 </Project>

@@ -7,30 +7,31 @@ using CK.DB.Auth;
 using CK.DB.User.UserGithub;
 
 using static CK.Testing.DBSetupTestHelper;
+using FluentAssertions;
+using System;
 
 namespace CK.Sample.Data.Tests
 {
     [TestFixture]
     public class GithubSetup
     {
-        [Explicit]
         [Test]
-        public async Task Create_Github_user()
+        public async Task Create_fake_Github_user()
         {
-            var uTable = TestHelper.StObjMap.Default.Obtain<UserTable>();
-            var gHTable = TestHelper.StObjMap.Default.Obtain<UserGithubTable>();
-            var gHInfoFactory = TestHelper.StObjMap.Default.Obtain<IPocoFactory<IUserGithubInfo>>();
+            var uTable = TestHelper.StObjMap.StObjs.Obtain<UserTable>();
+            var gHTable = TestHelper.StObjMap.StObjs.Obtain<UserGithubTable>();
+            var gHInfoFactory = TestHelper.StObjMap.StObjs.Obtain<IPocoFactory<IUserGithubInfo>>();
 
-            using( var ctx = new SqlStandardCallContext() )
+            using( var ctx = new SqlStandardCallContext( TestHelper.Monitor ) )
             {
-                var userId = await uTable.CreateUserAsync( ctx, 1, "cat" );
-                Assert.Greater( userId, 0 );
+                var userId = await uTable.CreateUserAsync( ctx, 1, Guid.NewGuid().ToString() );
+                userId.Should().BeGreaterThan( 1 );
 
                 var uGInfo = gHInfoFactory.Create();
-                uGInfo.GithubAccountId = "26920011";
+                uGInfo.GithubAccountId = Guid.NewGuid().ToString();
 
                 var githubResponse = await gHTable.CreateOrUpdateGithubUserAsync( ctx, 1, userId, uGInfo, UCLMode.CreateOnly );
-                Assert.AreEqual( githubResponse.OperationResult, UCResult.Created );
+                githubResponse.OperationResult.Should().Be( UCResult.Created );
             }
         }
     }

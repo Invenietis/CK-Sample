@@ -1,0 +1,10 @@
+create transformer on CK.sUserSimpleInvitationStartResponse
+as
+begin
+  add parameter @FirstName nvarchar(127) output, @LastName nvarchar(127) output;
+  in single part {select @ExpirationDateUtc = ExpirationDateUtc}
+	begin
+		add column @FirstName = FirstName;
+		add column @LastName = LastName;
+	end
+end

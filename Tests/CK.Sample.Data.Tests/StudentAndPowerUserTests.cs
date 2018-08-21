@@ -18,9 +18,9 @@ namespace CK.Sample.Data.Tests
         [Test]
         public void creating_and_destroying_StudentUser()
         {
-            var s = TestHelper.StObjMap.Default.Obtain<StudentUserTable>();
-            var u = TestHelper.StObjMap.Default.Obtain<CK.DB.Actor.UserTable>();
-            using( var ctx = new SqlStandardCallContext() )
+            var s = TestHelper.StObjMap.StObjs.Obtain<StudentUserTable>();
+            var u = TestHelper.StObjMap.StObjs.Obtain<CK.DB.Actor.UserTable>();
+            using( var ctx = new SqlStandardCallContext( TestHelper.Monitor ) )
             {
                 var id = s.CreateStudent( ctx, 1, Guid.NewGuid().ToString(), Guid.NewGuid() );
                 id.Should().BeGreaterThan( 1 );
@@ -33,9 +33,9 @@ namespace CK.Sample.Data.Tests
         [Test]
         public void creating_and_destroying_PowerUser()
         {
-            var u = TestHelper.StObjMap.Default.Obtain<CK.DB.Actor.UserTable>();
-            var p = TestHelper.StObjMap.Default.Obtain<PowerUserTable>();
-            using( var ctx = new SqlStandardCallContext() )
+            var u = TestHelper.StObjMap.StObjs.Obtain<CK.DB.Actor.UserTable>();
+            var p = TestHelper.StObjMap.StObjs.Obtain<PowerUserTable>();
+            using( var ctx = new SqlStandardCallContext( TestHelper.Monitor ) )
             {
                 var anyUserId = u.CreateUser( ctx, 1, Guid.NewGuid().ToString() ); 
                 p.PlugPowerUser( ctx, 1, anyUserId );

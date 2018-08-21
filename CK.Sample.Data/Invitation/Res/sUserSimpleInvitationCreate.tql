@@ -1,0 +1,10 @@
+create transformer on CK.sUserSimpleInvitationCreate
+as
+begin
+  add parameter @FirstName nvarchar(127) = null, @LastName nvarchar(127) = null before @Options;
+  in single statement {insert into CK.tUserSimpleInvitation}
+	begin
+		add column FirstName = isnull(@FirstName,N'');
+		add column LastName = isnull(@LastName,N'');
+	end
+end
